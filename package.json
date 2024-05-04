@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon server.js",
-    "build": "node build",
-    "start": "node start",
+    "build": "next build",
+    "start": "node server.js",
     "lint": "next lint"
   },
   "dependencies": {
