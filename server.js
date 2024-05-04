@@ -5,7 +5,7 @@ const cors = require('cors');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-
+const port = process.env.PORT || 4000;
 app.prepare().then(() => {
   const server = express();
   server.use(cors());
@@ -13,7 +13,7 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-  server.listen(4000, (err) => {
+  server.listen(port, (err) => {
     if (err) throw err;
     console.log('> Ready on http://localhost:4000');
   });
